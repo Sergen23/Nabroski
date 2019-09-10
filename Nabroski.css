@@ -34,3 +34,43 @@ a {
 		left: 300px;
 		transition: .6s ease-in-out;
 	}
+
+// Добавил input
+
+.myinput {
+	text-transform: uppercase;
+	background-color: #f2f2f2;
+	width: 370px;
+	height: 70px;
+	padding-left: 30px;
+	font-size: 13px;
+}
+
+.myinput[required] + label {
+	text-transform: none;
+	position: relative;
+  	display: inline-block;
+  	vertical-align: middle;
+}
+
+.myinput[required] + label:before {
+	content: "\2709";
+	position: absolute;
+	left: -50px;
+	top: -15px;
+	font-size: 40px;
+	color: #818181;
+}
+
+ .myinput[required]:hover + label:before, .myinput[required]:focus + label:before {
+	color: rgb(220, 200, 200);
+}
+
+.myinput[required]:not(:focus):not(:hover):valid {
+	opacity: .4;
+}
+
+.myinput[required]:not(:focus):valid + label:before {
+	content: "\2714";
+	color: green;
+}
